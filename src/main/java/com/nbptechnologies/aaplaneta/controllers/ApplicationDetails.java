@@ -6,10 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/")
 public class ApplicationDetails {
 
-@GetMapping("/appinfo")
+    @GetMapping("/")
+    public String getdefaultResponse(){
+        return "This is default response";
+    }
+@GetMapping("/api/appinfo")
 public AppInfo getAppDetails(){
 return new AppInfo(1,"Applinfo");
 }
